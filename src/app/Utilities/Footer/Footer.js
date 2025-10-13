@@ -1,15 +1,16 @@
 "use client";
 import Link from "next/link";
+import { logoName } from "../Utility";
 
 export default function Footer() {
   return (
     <footer className="bg-[#f3ecff] border-t border-violet-200 text-gray-700 mt-10">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         <div>
-          <h2 className="text-xl font-semibold text-[#3e1f92] mb-3">rtXpress</h2>
+          <h2 className="text-xl font-semibold text-[#3e1f92] mb-3">{logoName}</h2>
           <p className="text-sm leading-relaxed text-gray-600">
             Check and pay your E-Challans instantly. Secure, reliable, and easy
-            to use – stay compliant on the road with rtXpress.
+            to use – stay compliant on the road with {logoName}.
           </p>
         </div>
 
@@ -38,8 +39,8 @@ export default function Footer() {
           <h3 className="text-lg font-semibold text-[#5b2bd9] mb-3">Contact Us</h3>
           <p className="text-sm text-gray-600">
             Email:{" "}
-            <Link href="mailto:support@rtxpress.com" className="text-[#6d38f0] hover:underline">
-              support@rtxpress.com
+            <Link href="mailto:support@{logoName}.com" className="text-[#6d38f0] hover:underline">
+              support@{logoName}.com
             </Link>
           </p>
           <p className="text-sm text-gray-600 mt-2">
@@ -52,7 +53,7 @@ export default function Footer() {
       </div>
 
       <div className="bg-[#e9dcff] py-4 text-center text-sm text-gray-600">
-        © {new Date().getFullYear()} rtXpress. All rights reserved.
+        © {new Date().getFullYear()} {logoName}. All rights reserved.
       </div>
     </footer>
   );

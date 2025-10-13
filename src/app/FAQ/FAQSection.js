@@ -27,6 +27,26 @@ const faqs = [
     answer:
       "Sometimes updates take 24–48 hours. If the issue persists, contact our support team.",
   },
+  {
+    question: "Is my payment secure?",
+    answer:
+      "Yes, we use industry-standard encryption and a secure payment gateway to ensure your data is safe.",
+  },
+  {
+    question: "Can I view past challans for my vehicle?",
+    answer:
+      "You can check the history of your vehicle’s challans and their status in our portal.",
+  },
+  {
+    question: "Do I need to register to pay a challan?",
+    answer:
+      "Registration is optional. You can pay as a guest, but registering allows you to track payments easily.",
+  },
+  {
+    question: "Can I use multiple vehicles under one account?",
+    answer:
+      "Yes, you can add multiple vehicles to your account and manage their challans conveniently.",
+  },
 ];
 
 export default function FAQSection() {
@@ -37,23 +57,27 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-14">
-      {/* Header */}
-      <h2 className="text-2xl sm:text-3xl font-bold text-[#3e1f92] mb-8 text-center sm:text-left">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-16">
+      <h2 className="text-4xl font-extrabold text-[#4b2cf0] mb-12 text-left">
         Frequently Asked Questions
       </h2>
 
-      {/* FAQ Box */}
-      <div className="bg-white/80 backdrop-blur-lg border border-violet-100 rounded-2xl shadow-md divide-y divide-gray-100">
+      <div className="space-y-4">
         {faqs.map((faq, index) => (
-          <div key={index} className="p-4 sm:p-5">
+          <div
+            key={index}
+            className="bg-gradient-to-r from-white via-white/90 to-white/80 p-6 rounded-2xl shadow-lg border border-violet-100 hover:shadow-2xl transition-all duration-300"
+          >
             <button
               onClick={() => toggleFAQ(index)}
-              className="w-full flex justify-between items-center text-left text-gray-800 font-medium text-base sm:text-lg focus:outline-none"
+              className="w-full flex justify-between items-center text-left text-gray-800 font-semibold text-lg focus:outline-none"
             >
-              <span className="pr-4 leading-snug">Q. {faq.question}</span>
+              <div className="flex items-center gap-3">
+                <div className="text-[#7d5cff] font-bold text-xl">Q.</div>
+                <span>{faq.question}</span>
+              </div>
               <span
-                className={`ml-2 transition-transform duration-300 text-lg ${
+                className={`ml-2 transition-transform duration-300 text-2xl ${
                   openIndex === index ? "rotate-180 text-[#6d38f0]" : "text-gray-400"
                 }`}
               >
@@ -61,11 +85,13 @@ export default function FAQSection() {
               </span>
             </button>
 
-            {openIndex === index && (
-              <p className="mt-3 text-gray-600 text-sm sm:text-base leading-relaxed">
-                {faq.answer}
-              </p>
-            )}
+            <div
+              className={`mt-4 text-gray-700 text-base leading-relaxed overflow-hidden transition-all duration-500 ${
+                openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              {faq.answer}
+            </div>
           </div>
         ))}
       </div>

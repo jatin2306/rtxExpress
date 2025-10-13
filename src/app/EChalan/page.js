@@ -2,12 +2,25 @@
 import React, { useState } from "react";
 import FAQSection from "../FAQ/FAQSection";
 import Link from "next/link";
+import Loader from "../Utilities/Loader/Loader";
+import SafetyTips from "../Components/SafetyTips/SafetyTips";
+
 export default function EChallan() {
   const [vehicleNumber, setVehicleNumber] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Vehicle Number:", vehicleNumber);
+  };
+  const handleVehicleInput = (value) => {
+    let formatted = value.toUpperCase().replace(/[^A-Z0-9]/g, "");
+    if (formatted.length > 2)
+      formatted = formatted.slice(0, 2) + " " + formatted.slice(2);
+    if (formatted.length > 5)
+      formatted = formatted.slice(0, 5) + " " + formatted.slice(5);
+    if (formatted.length > 8)
+      formatted = formatted.slice(0, 8) + " " + formatted.slice(8, 12);
+    setVehicleNumber(formatted);
   };
 
   return (
@@ -17,10 +30,15 @@ export default function EChallan() {
         <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-10">
           {/* Left Section - Illustration & Info */}
           <div className="flex flex-col justify-center w-full md:w-1/2 space-y-6 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#4b2cf0] leading-tight">
-              Check & Pay Your <br />{" "}
-              <span className="text-[#7d5cff]">E-Challan</span> Instantly
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+              Check & Pay Your <br />
+              <span className="text-[#7d5cff] font-extrabold">E-</span>
+              <span className="text-[#7d5cff] font-extrabold">
+                Challan
+              </span>{" "}
+              Instantly
             </h1>
+
             <p className="text-gray-600 text-base md:text-lg max-w-md mx-auto md:mx-0">
               Stay compliant on the road. Find your challan, view details, and
               pay securely in just a few clicks.
@@ -63,10 +81,10 @@ export default function EChallan() {
                   </div>
                   <input
                     type="text"
-                    placeholder="DL 12 CX XXXX"
+                    placeholder="DL 12 CX 1234"
                     value={vehicleNumber}
-                    onChange={(e) => setVehicleNumber(e.target.value)}
-                    className="flex-1 border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#7b4ff2] transition-all"
+                    onChange={(e) => handleVehicleInput(e.target.value)}
+                    className="flex-1 border border-gray-300 rounded-lg px-4 py-3 text-xl font-bold uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-[#7b4ff2] transition-all"
                   />
                 </div>
               </div>
@@ -84,8 +102,9 @@ export default function EChallan() {
           </div>
         </div>
       </div>
+      <SafetyTips />
+      <Loader loading={false} />
       <FAQSection />
-
     </>
   );
 }

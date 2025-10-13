@@ -24,27 +24,3 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
- .nav-3d {
-  background-color: #9370DB;
-  color: white;
-  padding: 5px 20px;
-  border-radius: 12px;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  box-shadow: 0 6px grey;
-  position: relative;
-  font-family: sans-serif;
-}
-
-
-.nav-3d:hover {
-  transform: translateY(4px);
-  box-shadow: 0 2px grey;
-}
-
-
-.nav-3d:active {
-  transform: translateY(6px);
-  box-shadow: 0 0 grey;
-
-}
