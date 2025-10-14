@@ -1,10 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Ticket, ChevronRight, Wallet } from "lucide-react";
 
-export default function ChallansPage() {
+ function ChallansContent() {
   const [selectedChallan, setSelectedChallan] = useState(null);
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -251,5 +251,12 @@ export default function ChallansPage() {
         )}
       </AnimatePresence>
     </div>
+  );
+}
+export default function ChallansPage() {
+  return (
+    <Suspense fallback={<div className="p-8 text-center text-indigo-600">Loading...</div>}>
+      <ChallansContent />
+    </Suspense>
   );
 }
