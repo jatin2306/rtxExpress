@@ -8,7 +8,6 @@ export default function LoginModal({ isOpen, onClose }) {
   const [error, setError] = useState("");
 
   const validateEmail = (email) => {
-    // Simple but solid regex for email validation
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
