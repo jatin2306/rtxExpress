@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { logoName } from "../Utility";
-import LoginModal from "../../Login/page";
+import LoginModal from '../../Components/Login/Login';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
