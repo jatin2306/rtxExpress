@@ -71,7 +71,7 @@ import { MapPin, Ticket, ChevronRight, Wallet } from "lucide-react";
         email: "user@example.com",
         contact: "9999999999",
       },
-      theme: { color: "#4F46E5" },
+      theme: { color: "var(--color-hoverColor)" },
     };
 
     const rzp = new window.Razorpay(options);
@@ -79,14 +79,14 @@ import { MapPin, Ticket, ChevronRight, Wallet } from "lucide-react";
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white px-4 sm:px-8 py-10">
+    <div className="min-h-screen bg-gradient-to-b from-main to-white px-4 sm:px-8 py-10">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl sm:text-3xl font-bold text-indigo-700 text-left">
+          <h1 className="text-2xl sm:text-3xl font-bold text-textPrimary text-left">
             Your {activeTab} Challans
           </h1>
 
-          <div className="flex items-center gap-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-bold px-4 py-2 rounded-2xl shadow-lg transform hover:scale-105 transition-transform">
+          <div className="flex items-center gap-3 bg-gradient-to-r from-hoverColor to-hoverlight text-textwhite font-bold px-4 py-2 rounded-2xl shadow-lg transform hover:scale-105 transition-transform">
             <span className="text-sm sm:text-base">🚗</span>
             <span className="tracking-widest text-lg sm:text-xl">
               HR26 AB 1234
@@ -97,7 +97,7 @@ import { MapPin, Ticket, ChevronRight, Wallet } from "lucide-react";
         <div className="flex items-center text-sm text-gray-500 mb-8 gap-1">
           <button
             onClick={() => router.push("/")}
-            className="hover:text-indigo-600 font-medium"
+            className="hover:text-hoverColor font-medium"
           >
             Home
           </button>
@@ -105,12 +105,12 @@ import { MapPin, Ticket, ChevronRight, Wallet } from "lucide-react";
           <ChevronRight className="w-4 h-4 text-gray-400" />
           <span
             onClick={() => router.push("/Overview")}
-            className="font-medium hover:text-indigo-600 cursor-pointer"
+            className="font-medium hover:text-hoverColor cursor-pointer"
           >
             Overview
           </span>
           <ChevronRight className="w-4 h-4 text-gray-400" />
-          <span className="text-indigo-600 font-semibold">{activeTab}</span>
+          <span className="text-hoverColor font-semibold">{activeTab}</span>
         </div>
 
         {activeTab === "Pending" && filteredChallans.length > 0 && (
@@ -118,15 +118,15 @@ import { MapPin, Ticket, ChevronRight, Wallet } from "lucide-react";
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-gradient-to-r from-indigo-100 to-indigo-50 border border-indigo-200 rounded-2xl shadow-sm p-5 sm:p-6 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+            className="bg-gradient-to-r from-main to-backg border border-hoverlight/20 rounded-2xl shadow-sm p-5 sm:p-6 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4"
           >
             <div>
-              <h2 className="text-lg sm:text-xl font-semibold text-indigo-800">
+              <h2 className="text-lg sm:text-xl font-semibold text-textPrimary">
                 Total {filteredChallans.length} Challans
               </h2>
               <p className="text-gray-600 mt-1">
                 Combined Amount:{" "}
-                <span className="font-bold text-indigo-700">
+                <span className="font-bold text-textPrimary">
                   ₹{totalAmount.toLocaleString("en-IN")}
                 </span>
               </p>
@@ -134,7 +134,7 @@ import { MapPin, Ticket, ChevronRight, Wallet } from "lucide-react";
 
             <button
               onClick={handlePayAll}
-              className="flex items-center justify-center gap-2 bg-indigo-700 hover:bg-indigo-800 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-all"
+              className="flex items-center justify-center gap-2 bg-hoverColor hover:bg-hoverlight text-textwhite font-semibold px-6 py-3 rounded-lg shadow-md transition-all"
             >
               <Wallet className="w-5 h-5" />
               Pay All
@@ -150,10 +150,10 @@ import { MapPin, Ticket, ChevronRight, Wallet } from "lucide-react";
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white border border-indigo-100 rounded-xl shadow-sm p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+                className="bg-backg border border-hoverlight/20 rounded-xl shadow-sm p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
               >
                 <div>
-                  <h3 className="text-lg font-semibold text-indigo-700">
+                  <h3 className="text-lg font-semibold text-textPrimary">
                     {item.offence}
                   </h3>
                   <p className="text-sm text-gray-500 mt-1">
@@ -162,12 +162,12 @@ import { MapPin, Ticket, ChevronRight, Wallet } from "lucide-react";
                 </div>
 
                 <div className="flex sm:flex-col sm:items-end justify-between sm:justify-center w-full sm:w-auto">
-                  <p className="text-lg font-bold text-indigo-600">
+                  <p className="text-lg font-bold text-hoverColor">
                     ₹{item.amount.toLocaleString("en-IN")}
                   </p>
                   <button
                     onClick={() => setSelectedChallan(item)}
-                    className="mt-1 text-sm text-indigo-500 hover:underline font-medium"
+                    className="mt-1 text-sm text-hoverColor hover:underline font-medium"
                   >
                     View Details
                   </button>
@@ -197,7 +197,7 @@ import { MapPin, Ticket, ChevronRight, Wallet } from "lucide-react";
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="bg-white w-[90%] sm:w-[480px] rounded-2xl p-6 sm:p-8 shadow-lg relative border border-violet-100"
+              className="bg-backg w-[90%] sm:w-[480px] rounded-2xl p-6 sm:p-8 shadow-lg relative border border-hoverlight/20"
             >
               <button
                 onClick={() => setSelectedChallan(null)}
@@ -208,7 +208,7 @@ import { MapPin, Ticket, ChevronRight, Wallet } from "lucide-react";
 
               <div className="space-y-4 mt-4">
                 <div>
-                  <p className="text-3xl font-bold text-indigo-700">
+                  <p className="text-3xl font-bold text-textPrimary">
                     ₹{selectedChallan.amount.toLocaleString("en-IN")}
                   </p>
                   <p className="text-gray-700 mt-1">
@@ -223,7 +223,7 @@ import { MapPin, Ticket, ChevronRight, Wallet } from "lucide-react";
                   <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-md text-sm">
                     Issued on {selectedChallan.issuedOn}
                   </span>
-                  <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-md text-sm">
+                  <span className="bg-main text-textPrimary px-3 py-1 rounded-md text-sm">
                     {selectedChallan.mode}
                   </span>
                 </div>
@@ -241,7 +241,7 @@ import { MapPin, Ticket, ChevronRight, Wallet } from "lucide-react";
 
                 <button
                   onClick={() => setSelectedChallan(null)}
-                  className="w-full bg-indigo-700 hover:bg-indigo-800 text-white font-semibold py-3 rounded-lg shadow-md transition-all"
+                  className="w-full bg-hoverColor hover:bg-hoverlight text-textwhite font-semibold py-3 rounded-lg shadow-md transition-all"
                 >
                   Ok, got it
                 </button>

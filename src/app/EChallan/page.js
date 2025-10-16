@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import FAQSection from "../FAQ/FAQSection";
 import Link from "next/link";
-import Loader from "../Utilities/Loader/Loader";
+import Loader from "../Components/Loader/Loader";
 import SafetyTips from "../Components/SafetyTips/SafetyTips";
 
 export default function EChallan() {
@@ -26,13 +26,13 @@ export default function EChallan() {
   return (
     <>
       {" "}
-      <div className="min-h-[calc(100vh-64px)] bg-gradient-to-b from-[#ede9ff] via-[#f6f4ff] to-white flex items-center justify-center px-4 py-10">
+      <div className="min-h-[calc(100vh-64px)] bg-gradient-to-b from-main via-backg to-white flex items-center justify-center px-4 py-10">
         <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-10">
           <div className="flex flex-col justify-center w-full md:w-1/2 space-y-6 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               Check & Pay Your <br />
-              <span className="text-[#7d5cff] font-extrabold">E-</span>
-              <span className="text-[#7d5cff] font-extrabold">
+              <span className="text-hoverlight font-extrabold">E-</span>
+              <span className="text-hoverlight font-extrabold">
                 Challan
               </span>{" "}
               Instantly
@@ -60,7 +60,7 @@ export default function EChallan() {
           </div>
 
           <div className="w-full md:w-1/2 bg-white/70 backdrop-blur-lg border border-violet-100 rounded-2xl shadow-xl p-6 sm:p-8 md:p-10">
-            <h2 className="text-xl sm:text-2xl font-semibold text-[#3e1f92] mb-3 sm:mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-textPrimary mb-3 sm:mb-4">
               Check Your Vehicle Status
             </h2>
             <p className="text-xs sm:text-sm text-gray-500 mb-5 sm:mb-6">
@@ -74,7 +74,7 @@ export default function EChallan() {
                   Vehicle Number
                 </label>
                 <div className="flex items-center gap-2">
-                  <div className="bg-[#ece9fe] text-[#3e1f92] font-semibold px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base">
+                  <div className="bg-main text-textPrimary font-semibold px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base">
                     IND
                   </div>
                   <input
@@ -82,7 +82,7 @@ export default function EChallan() {
                     placeholder="DL 12 CX 1234"
                     value={vehicleNumber}
                     onChange={(e) => handleVehicleInput(e.target.value)}
-                    className="flex-1 border border-gray-300 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-lg sm:text-xl font-bold uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-[#7b4ff2] transition-all"
+                    className="flex-1 border border-gray-300 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-lg sm:text-xl font-bold uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-hoverColor transition-all"
                   />
                 </div>
               </div>
@@ -90,7 +90,7 @@ export default function EChallan() {
               <Link href="/Challans">
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#6d38f0] to-[#a178ff] hover:from-[#5b2bd9] hover:to-[#8b5cff] text-white font-semibold py-2.5 sm:py-3 rounded-lg shadow-lg transition-all duration-300 text-sm sm:text-base"
+                  className="w-full bg-gradient-to-r from-hoverColor to-hoverlight hover:from-hoverColor hover:to-hoverlight text-textwhite font-semibold py-2.5 sm:py-3 rounded-lg shadow-lg transition-all duration-300 text-sm sm:text-base"
                 >
                   🔍 Check Challan
                 </button>

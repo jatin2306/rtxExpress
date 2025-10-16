@@ -6,7 +6,7 @@ export default function VehicleLoader({ loading }) {
     <AnimatePresence>
       {loading && (
         <motion.div
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#f9f6ff]"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-main"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.5 } }}
@@ -23,18 +23,18 @@ export default function VehicleLoader({ loading }) {
             >
               <path
                 d="M2 24h60v4H2v-4zm8-8h44l4 8H6l4-8zm0 0V12a4 4 0 014-4h36a4 4 0 014 4v4"
-                stroke="#6d38f0"
+                stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-              <circle cx="14" cy="24" r="3" fill="#6d38f0" />
-              <circle cx="50" cy="24" r="3" fill="#6d38f0" />
+              <circle cx="14" cy="24" r="3" fill="currentColor" />
+              <circle cx="50" cy="24" r="3" fill="currentColor" />
             </svg>
           </motion.div>
 
           <motion.h2
-            className="mt-8 text-xl md:text-2xl font-semibold text-[#3e1f92]"
+            className="mt-8 text-xl md:text-2xl font-semibold text-textPrimary"
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity }}
           >

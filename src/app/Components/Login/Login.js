@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import Button from "../Common/Button";
+import Input from "../Common/Input";
 
 export default function LoginModal({ isOpen, onClose }) {
   const [email, setEmail] = useState("");
@@ -47,7 +49,7 @@ export default function LoginModal({ isOpen, onClose }) {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50"
+          className="fixed inset-0 flex items-center justify-center bg-textSecond/40 backdrop-blur-sm z-50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -55,7 +57,7 @@ export default function LoginModal({ isOpen, onClose }) {
         >
           <motion.div
             onClick={(e) => e.stopPropagation()}
-            className="bg-white w-[90%] max-w-md rounded-2xl p-6 sm:p-8 border border-violet-100 shadow-lg relative"
+            className="bg-backg w-[90%] max-w-md rounded-2xl p-6 sm:p-8 border border-textPrimary shadow-lg relative"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
@@ -71,12 +73,12 @@ export default function LoginModal({ isOpen, onClose }) {
               ×
             </button>
 
-            <h2 className="text-2xl font-semibold text-center text-[#3e1f92] mb-6">
+            <h2 className="text-2xl font-semibold text-center text-textPrimary mb-6">
               Login to view your Account Details
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-              <input
+              <Input
                 type="email"
                 placeholder="Enter your email address"
                 value={email}
@@ -86,7 +88,7 @@ export default function LoginModal({ isOpen, onClose }) {
                 } rounded-lg px-4 py-3 focus:outline-none focus:ring-2 ${
                   error
                     ? "focus:ring-red-400"
-                    : "focus:ring-[#8e68f0] border-gray-300"
+                    : "focus:ring-hoverlight textPrimary"
                 }`}
               />
 
@@ -94,23 +96,23 @@ export default function LoginModal({ isOpen, onClose }) {
                 <p className="text-red-500 text-sm text-center">{error}</p>
               )}
 
-              <p className="text-sm sm:text-base text-gray-500 text-center">
+              <p className="text-sm sm:text-base text-black text-center">
                 By proceeding, you agree to our{" "}
-                <Link href="#" className="text-[#6d38f0] hover:underline">
+                <Link href="#" className="text-hoverColor hover:underline">
                   terms
                 </Link>{" "}
                 and{" "}
-                <Link href="#" className="text-[#6d38f0] hover:underline">
+                <Link href="#" className="text-hoverColor hover:underline">
                   conditions
                 </Link>
               </p>
 
-              <button
+              <Button
                 type="submit"
-                className="w-full bg-[#6d38f0] hover:bg-[#5b2bd9] text-white font-semibold py-3 rounded-lg shadow-md transition-all"
+                className="w-full bg-hoverlight hover:bg-hoverColor text-textwhite md:text-textPrimary font-semibold py-3 rounded-lg shadow-md transition-all hover:text-textwhite"
               >
                 Verify your email
-              </button>
+              </Button>
             </form>
           </motion.div>
         </motion.div>

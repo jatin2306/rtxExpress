@@ -4,10 +4,10 @@ import { LogOut } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { logoName, navItems } from "../Utility";
-import LoginModal from "../../Components/Login/Login";
+import { logoName, navItems } from "../../Utilities/Utility";
+import LoginModal from "../Login/Login";
 import { usePathname } from "next/navigation";
-import Button from "../../Components/Common/Button";
+import Button from "../Common/Button";
 import MobileHeader from "../MobileHeader/MobileHeader";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -56,7 +56,7 @@ const Header = () => {
                     className={`px-5 py-2 rounded-xl font-medium border shadow-sm transition-all duration-200 ${
                       isActive
                         ? "bg-gradient-to-r from-hoverColor to-hoverlight text-textwhite font-semibold border-transparent shadow-md"
-                        : "text-hoverColor bg-backg border-i hover:bg-gradient-to-r font-semibold hover:from-hoverColor hover:to-hoverlight hover:text-textwhite hover:border-transparent hover:shadow-md"
+                        : "text-hoverColor bg-backg border hover:bg-gradient-to-r font-semibold hover:from-hoverColor hover:to-hoverlight hover:text-textwhite hover:border-transparent hover:shadow-md"
                     }`}
                   >
                     {label}
