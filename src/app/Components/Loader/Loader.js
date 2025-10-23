@@ -6,7 +6,7 @@ export default function VehicleLoader({ loading }) {
     <AnimatePresence>
       {loading && (
         <motion.div
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-main"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-backg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.5 } }}
@@ -14,7 +14,7 @@ export default function VehicleLoader({ loading }) {
           <motion.div
             animate={{ x: [0, 60, -60, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="w-24 h-24 md:w-32 md:h-32"
+            className="w-24 h-24 md:w-32 md:h-32 text-main"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -34,14 +34,14 @@ export default function VehicleLoader({ loading }) {
           </motion.div>
 
           <motion.h2
-            className="mt-8 text-xl md:text-2xl font-semibold text-textPrimary"
+            className="mt-8 text-xl md:text-2xl font-semibold text-textwhite"
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
             Hang tight, verifying your vehicle details…
           </motion.h2>
 
-          <p className="text-gray-500 mt-2 text-sm md:text-base">
+          <p className="text-[rgba(255,255,255,0.7)] mt-2 text-sm md:text-base">
             Fetching pending challans from transport servers
           </p>
         </motion.div>

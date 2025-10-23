@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #008080; /* teal */
+  --foreground: #7fffd4; /* aquamarine */
 }
 
 @theme inline {
-  --color-main: #c4fff9;
+  --color-main: #7fffd4; /* aquamarine */
 
-  --color-hoverColor: #07beb8;
-  --color-hoverlight: #68d8d6;
-  --color-textPrimary: #125a59;
-  --color-textSecond: #000;
-  --color-backg: #fff;
-  --color-textwhite: #fff;
-  --color-turquoiseStart: #22d3ee;
-  --color-turquoiseEnd: #06b6d4;
-  --color-turquoiseGlow: rgba(34,211,238,0.6);
+  --color-hoverColor: #7fffd4; /* aquamarine */
+  --color-hoverlight: #9fffe0; /* lighter aquamarine for gradients */
+  --color-textPrimary: #7fffd4; /* aquamarine */
+  --color-textSecond: #7fffd4; /* aquamarine */
+  --color-backg: #008080; /* match page background */
+  --color-textwhite: #ffffff;
+  --color-turquoiseStart: #7fffd4;
+  --color-turquoiseEnd: #7fffd4;
+  --color-turquoiseGlow: rgba(127,255,212,0.6);
 }
 
 body {

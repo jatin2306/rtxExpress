@@ -26,55 +26,55 @@ export default function EChallan() {
   return (
     <>
       {" "}
-      <div className="min-h-[calc(100vh-64px)] bg-gradient-to-b from-main via-backg to-white flex items-center justify-center px-4 py-10">
+      <div className="min-h-[calc(100vh-64px)] bg-backg flex items-center justify-center px-4 py-12">
         <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-10">
           <div className="flex flex-col justify-center w-full md:w-1/2 space-y-6 text-center md:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-textwhite">
               Check & Pay Your <br />
-              <span className="text-hoverlight font-extrabold">E-</span>
-              <span className="text-hoverlight font-extrabold">
+              <span className="text-main font-extrabold">E-</span>
+              <span className="text-main font-extrabold">
                 Challan
               </span>{" "}
               Instantly
             </h1>
 
-            <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-md mx-auto md:mx-0">
+            <p className="text-[rgba(255,255,255,0.8)] text-sm sm:text-base md:text-lg max-w-md mx-auto md:mx-0">
               Stay compliant on the road. Find your challan, view details, and
               pay securely in just a few clicks.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-gray-700 mt-2 sm:mt-4">
-              <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-violet-100 text-sm sm:text-base">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-2 sm:mt-4">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-[rgba(255,255,255,0.2)] text-textwhite text-sm sm:text-base">
                 🚗 <span>Instant challan lookup</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-violet-100 text-sm sm:text-base">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-[rgba(255,255,255,0.2)] text-textwhite text-sm sm:text-base">
                 💳 <span>Secure payment gateway</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-violet-100 text-sm sm:text-base">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-[rgba(255,255,255,0.2)] text-textwhite text-sm sm:text-base">
                 ⚡ <span>One-tap clearance</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-violet-100 text-sm sm:text-base">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-[rgba(255,255,255,0.2)] text-textwhite text-sm sm:text-base">
                 🕐 <span>Faster loan processing</span>
               </div>
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 bg-white/70 backdrop-blur-lg border border-violet-100 rounded-2xl shadow-xl p-6 sm:p-8 md:p-10">
-            <h2 className="text-xl sm:text-2xl font-semibold text-textPrimary mb-3 sm:mb-4">
+          <div className="w-full md:w-1/2 bg-black/20 backdrop-blur-lg border border-[rgba(255,255,255,0.2)] rounded-2xl shadow-xl p-6 sm:p-8 md:p-10">
+            <h2 className="text-xl sm:text-2xl font-semibold text-textwhite mb-3 sm:mb-4">
               Check Your Vehicle Status
             </h2>
-            <p className="text-xs sm:text-sm text-gray-500 mb-5 sm:mb-6">
+            <p className="text-xs sm:text-sm text-[rgba(255,255,255,0.7)] mb-5 sm:mb-6">
               Enter your vehicle registration number below to view your challan
               details.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-textwhite mb-2">
                   Vehicle Number
                 </label>
                 <div className="flex items-center gap-2">
-                  <div className="bg-main text-textPrimary font-semibold px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base">
+                  <div className="bg-main text-[#004d4d] font-semibold px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base">
                     IND
                   </div>
                   <input
@@ -82,7 +82,7 @@ export default function EChallan() {
                     placeholder="DL 12 CX 1234"
                     value={vehicleNumber}
                     onChange={(e) => handleVehicleInput(e.target.value)}
-                    className="flex-1 border border-gray-300 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-lg sm:text-xl font-bold uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-hoverColor transition-all"
+                    className="flex-1 border border-transparent rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-lg sm:text-xl font-bold uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-main transition-all bg-white text-gray-900 placeholder:text-gray-400"
                   />
                 </div>
               </div>
@@ -90,7 +90,7 @@ export default function EChallan() {
               <Link href="/Challans">
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-hoverColor to-hoverlight hover:from-hoverColor hover:to-hoverlight text-textwhite font-semibold py-2.5 sm:py-3 rounded-lg shadow-lg transition-all duration-300 text-sm sm:text-base"
+                  className="w-full bg-main hover:bg-[#9fffe0] text-[#004d4d] font-semibold py-2.5 sm:py-3 rounded-lg shadow-lg transition-all duration-200 text-sm sm:text-base"
                 >
                   🔍 Check Challan
                 </button>

@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Image from "next/image";
 import { Shield, Clock, Wallet, FileCheck2 } from "lucide-react";
 import { logoName } from "../../Utilities/Utility";
@@ -33,20 +34,13 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-main via-backg to-white text-gray-900">
+    <div className="min-h-screen bg-backg">
       <section className="flex flex-col items-center justify-center text-center py-24 relative overflow-hidden px-4 sm:px-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(216,180,254,0.25),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(219,234,254,0.3),transparent_50%)]" />
-
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl sm:text-6xl font-extrabold text-transparent bg-clip-text drop-shadow-md leading-tight"
-          style={{
-            backgroundImage: `linear-gradient(to right, var(--color-turquoiseStart), var(--color-turquoiseEnd))`,
-            textShadow: `0 0 0.25rem var(--color-turquoiseGlow)`,
-          }}
+          className="text-4xl sm:text-6xl font-extrabold text-textwhite leading-tight"
         >
           Welcome to {logoName}
         </motion.h1>
@@ -55,24 +49,26 @@ export default function HomePage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="mt-4 sm:mt-5 text-base sm:text-lg text-textPrimary max-w-md sm:max-w-xl"
+          className="mt-4 sm:mt-5 text-base sm:text-lg text-[rgba(255,255,255,0.8)] max-w-md sm:max-w-xl"
         >
           Your one-stop platform for vehicle information, insurance, and challan
           management — fast, reliable, and effortless.
         </motion.p>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          className="mt-6 sm:mt-8 px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-hoverColor to-hoverlight text-textwhite font-semibold rounded-full shadow-md hover:shadow-lg transition text-sm sm:text-base"
-        >
-          Get Started
-        </motion.button>
+        <Link href="/EChallan">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            className="mt-6 sm:mt-8 px-6 sm:px-8 py-2.5 sm:py-3 bg-main text-[#004d4d] font-semibold rounded-full shadow-md hover:bg-[#9fffe0] transition text-sm sm:text-base"
+          >
+            Get Started
+          </motion.button>
+        </Link>
       </section>
 
       <section className="px-4 sm:px-10 pb-16 sm:pb-20">
         <div className="flex items-center gap-2 mb-6 sm:mb-8">
-          <div className="w-2 h-6 sm:h-8 bg-hoverColor rounded-full" />
-          <h2 className="text-xl sm:text-2xl font-semibold text-textPrimary">
+          <div className="w-2 h-6 sm:h-8 bg-main rounded-full" />
+          <h2 className="text-xl sm:text-2xl font-semibold text-textwhite">
             Trending Cars
           </h2>
         </div>
@@ -82,7 +78,7 @@ export default function HomePage() {
             <motion.div
               key={index}
               whileHover={{ scale: 1.04, y: -4 }}
-              className={`p-4 rounded-2xl shadow-md bg-backg hover:shadow-xl transition text-center sm:text-left`}
+              className={`p-4 rounded-2xl shadow-md bg-black/20 backdrop-blur-lg border border-[rgba(255,255,255,0.2)] hover:shadow-xl transition text-center sm:text-left`}
             >
               <div className="flex justify-center">
                 <Image
@@ -93,10 +89,10 @@ export default function HomePage() {
                   className="rounded-lg object-cover w-full sm:w-[260px] h-auto"
                 />
               </div>
-              <h3 className="mt-3 font-semibold text-lg sm:text-xl text-textPrimary">
+              <h3 className="mt-3 font-semibold text-lg sm:text-xl text-textwhite">
                 {car.name}
               </h3>
-              <p className="text-gray-600 font-medium text-sm sm:text-base">
+              <p className="text-[rgba(255,255,255,0.7)] font-medium text-sm sm:text-base">
                 {car.price}
               </p>
             </motion.div>
@@ -106,7 +102,7 @@ export default function HomePage() {
         <div className="flex justify-center mt-8 sm:mt-10">
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="px-5 sm:px-6 py-2 sm:py-2.5 rounded-full border border-hoverColor text-hoverColor hover:bg-hoverlight/10 transition font-medium text-sm sm:text-base"
+            className="px-5 sm:px-6 py-2 sm:py-2.5 rounded-full border border-main text-main hover:bg-main hover:text-[#004d4d] transition font-medium text-sm sm:text-base"
           >
             View More →
           </motion.button>
@@ -115,43 +111,43 @@ export default function HomePage() {
 
       <section className="px-4 sm:px-10 pb-16 sm:pb-20">
         <div className="flex items-center gap-2 mb-6 sm:mb-8">
-          <div className="w-2 h-6 sm:h-8 bg-hoverColor rounded-full" />
-          <h2 className="text-xl sm:text-2xl font-semibold text-textPrimary">
+          <div className="w-2 h-6 sm:h-8 bg-main rounded-full" />
+          <h2 className="text-xl sm:text-2xl font-semibold text-textwhite">
             Why choose {logoName}?
           </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {[
             {
-              icon: <Shield className="w-6 h-6 text-hoverColor" />,
+              icon: <Shield className="w-6 h-6 text-main" />,
               title: "Secure Payments",
               desc: "Bank-grade encryption for every transaction.",
             },
             {
-              icon: <Clock className="w-6 h-6 text-hoverColor" />,
+              icon: <Clock className="w-6 h-6 text-main" />,
               title: "Fast Processing",
               desc: "Find and clear challans in minutes.",
             },
             {
-              icon: <FileCheck2 className="w-6 h-6 text-hoverColor" />,
+              icon: <FileCheck2 className="w-6 h-6 text-main" />,
               title: "Official Records",
               desc: "Accurate data from transport servers.",
             },
             {
-              icon: <Wallet className="w-6 h-6 text-hoverColor" />,
+              icon: <Wallet className="w-6 h-6 text-main" />,
               title: "Multiple Methods",
               desc: "UPI, cards, and netbanking supported.",
             },
           ].map((f, i) => (
             <div
               key={i}
-              className="bg-backg rounded-2xl p-5 shadow-md hover:shadow-lg transition"
+              className="bg-black/20 backdrop-blur-lg border border-[rgba(255,255,255,0.2)] rounded-2xl p-5 shadow-md hover:shadow-lg transition"
             >
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-xl bg-hoverlight/10">{f.icon}</div>
-                <h3 className="font-semibold text-textPrimary">{f.title}</h3>
+                <div className="p-2 rounded-xl bg-main/20">{f.icon}</div>
+                <h3 className="font-semibold text-textwhite">{f.title}</h3>
               </div>
-              <p className="mt-2 text-sm text-gray-600">{f.desc}</p>
+              <p className="mt-2 text-sm text-[rgba(255,255,255,0.7)]">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -160,8 +156,8 @@ export default function HomePage() {
       {/* How it works */}
       <section className="px-4 sm:px-10 pb-16 sm:pb-20">
         <div className="flex items-center gap-2 mb-6 sm:mb-8">
-          <div className="w-2 h-6 sm:h-8 bg-hoverColor rounded-full" />
-          <h2 className="text-xl sm:text-2xl font-semibold text-textPrimary">
+          <div className="w-2 h-6 sm:h-8 bg-main rounded-full" />
+          <h2 className="text-xl sm:text-2xl font-semibold text-textwhite">
             How it works
           </h2>
         </div>
@@ -170,7 +166,7 @@ export default function HomePage() {
             {
               step: "1",
               title: "Enter vehicle number",
-              desc: "We’ll fetch your challans securely.",
+              desc: "We'll fetch your challans securely.",
             },
             {
               step: "2",
@@ -183,12 +179,12 @@ export default function HomePage() {
               desc: "Complete payment in seconds.",
             },
           ].map((s, i) => (
-            <div key={i} className="bg-backg rounded-2xl p-5 shadow-md">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-r from-hoverColor to-hoverlight text-textwhite flex items-center justify-center font-bold">
+            <div key={i} className="bg-black/20 backdrop-blur-lg border border-[rgba(255,255,255,0.2)] rounded-2xl p-5 shadow-md">
+              <div className="w-9 h-9 rounded-full bg-main text-[#004d4d] flex items-center justify-center font-bold">
                 {s.step}
               </div>
-              <h3 className="mt-3 font-semibold text-textPrimary">{s.title}</h3>
-              <p className="text-sm text-gray-600">{s.desc}</p>
+              <h3 className="mt-3 font-semibold text-textwhite">{s.title}</h3>
+              <p className="text-sm text-[rgba(255,255,255,0.7)]">{s.desc}</p>
             </div>
           ))}
         </div>

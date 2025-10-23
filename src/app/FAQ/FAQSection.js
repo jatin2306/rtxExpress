@@ -59,25 +59,25 @@ export default function FAQSection() {
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-16">
       <div className="flex items-center gap-2 mb-8">
-        <div className="w-2 h-8 bg-hoverColor rounded-full" />
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-textOnLight">
+        <div className="w-2 h-8 bg-main rounded-full" />
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-textwhite">
           Frequently Asked Questions
         </h2>
       </div>
 
-      <div className="divide-y divide-hoverlight/20 rounded-2xl border border-hoverlight/20 bg-cardBg shadow-sm overflow-hidden">
+      <div className="divide-y divide-[rgba(255,255,255,0.2)] rounded-2xl border border-[rgba(255,255,255,0.2)] bg-black/20 backdrop-blur-lg shadow-sm overflow-hidden">
         {faqs.map((faq, index) => (
           <div key={index}>
             <button
               onClick={() => toggleFAQ(index)}
-              className="w-full flex items-start justify-between gap-4 p-5 sm:p-6 text-left hover:bg-hoverlight/5 transition"
+              className="w-full flex items-start justify-between gap-4 p-5 sm:p-6 text-left hover:bg-white/5 transition"
             >
               <div className="flex-1">
-                <h3 className="text-base sm:text-lg font-semibold text-cardText">
+                <h3 className="text-base sm:text-lg font-semibold text-textwhite">
                   {faq.question}
                 </h3>
                 <div
-                  className={`mt-2 text-textSecond text-sm sm:text-base leading-relaxed ${
+                  className={`mt-2 text-[rgba(255,255,255,0.7)] text-sm sm:text-base leading-relaxed ${
                     openIndex === index ? "block" : "hidden"
                   }`}
                 >
@@ -87,8 +87,8 @@ export default function FAQSection() {
               <span
                 className={`ml-2 shrink-0 rounded-full border p-1 text-sm transition-transform duration-300 ${
                   openIndex === index
-                    ? "rotate-180 border-hoverColor text-hoverColor"
-                    : "border-gray-300 text-gray-500"
+                    ? "rotate-180 border-main text-main"
+                    : "border-[rgba(255,255,255,0.3)] text-[rgba(255,255,255,0.5)]"
                 }`}
               >
                 ▼

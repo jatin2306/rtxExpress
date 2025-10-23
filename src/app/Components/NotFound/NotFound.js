@@ -11,7 +11,7 @@ export default function NotFound({
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-center justify-center text-center p-8 bg-white border border-violet-100 shadow-md rounded-2xl max-w-md mx-auto"
+      className="flex flex-col items-center justify-center text-center p-8 bg-black/20 backdrop-blur-lg border border-[rgba(255,255,255,0.2)] shadow-md rounded-2xl max-w-md mx-auto"
     >
       <motion.div
         animate={{ y: [0, -6, 0] }}
@@ -27,8 +27,8 @@ export default function NotFound({
         />
       </motion.div>
 
-      <h2 className="text-xl font-semibold text-[#3e1f92] mb-2">{title}</h2>
-      <p className="text-gray-600 text-sm">{message}</p>
+      <h2 className="text-xl font-semibold text-textwhite mb-2">{title}</h2>
+      <p className="text-[rgba(255,255,255,0.7)] text-sm">{message}</p>
     </motion.div>
   );
 }
