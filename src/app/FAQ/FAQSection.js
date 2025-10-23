@@ -58,40 +58,42 @@ export default function FAQSection() {
 
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-16">
-      <h2 className="text-4xl font-extrabold text-[#4b2cf0] mb-12 text-left">
-        Frequently Asked Questions
-      </h2>
+      <div className="flex items-center gap-2 mb-8">
+        <div className="w-2 h-8 bg-hoverColor rounded-full" />
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-textOnLight">
+          Frequently Asked Questions
+        </h2>
+      </div>
 
-      <div className="space-y-4">
+      <div className="divide-y divide-hoverlight/20 rounded-2xl border border-hoverlight/20 bg-cardBg shadow-sm overflow-hidden">
         {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="bg-gradient-to-r from-white via-white/90 to-white/80 p-6 rounded-2xl shadow-lg border border-violet-100 hover:shadow-2xl transition-all duration-300"
-          >
+          <div key={index}>
             <button
               onClick={() => toggleFAQ(index)}
-              className="w-full flex justify-between items-center text-left text-gray-800 font-semibold text-lg focus:outline-none"
+              className="w-full flex items-start justify-between gap-4 p-5 sm:p-6 text-left hover:bg-hoverlight/5 transition"
             >
-              <div className="flex items-center gap-3">
-                <div className="text-[#7d5cff] font-bold text-xl">Q.</div>
-                <span>{faq.question}</span>
+              <div className="flex-1">
+                <h3 className="text-base sm:text-lg font-semibold text-cardText">
+                  {faq.question}
+                </h3>
+                <div
+                  className={`mt-2 text-textSecond text-sm sm:text-base leading-relaxed ${
+                    openIndex === index ? "block" : "hidden"
+                  }`}
+                >
+                  {faq.answer}
+                </div>
               </div>
               <span
-                className={`ml-2 transition-transform duration-300 text-2xl ${
-                  openIndex === index ? "rotate-180 text-[#6d38f0]" : "text-gray-400"
+                className={`ml-2 shrink-0 rounded-full border p-1 text-sm transition-transform duration-300 ${
+                  openIndex === index
+                    ? "rotate-180 border-hoverColor text-hoverColor"
+                    : "border-gray-300 text-gray-500"
                 }`}
               >
                 ▼
               </span>
             </button>
-
-            <div
-              className={`mt-4 text-gray-700 text-base leading-relaxed overflow-hidden transition-all duration-500 ${
-                openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-              }`}
-            >
-              {faq.answer}
-            </div>
           </div>
         ))}
       </div>
