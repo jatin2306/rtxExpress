@@ -4,9 +4,21 @@ import FAQSection from "../FAQ/FAQSection";
 import Link from "next/link";
 import Loader from "../Components/Loader/Loader";
 import SafetyTips from "../Components/SafetyTips/SafetyTips";
+import HowItWorks from "../Components/HowItWorks/HowItWorks";
+import FeaturesSection from "../Components/FeaturesSection/FeaturesSection";
+import StatisticsSection from "../Components/StatisticsSection/StatisticsSection";
 
 export default function EChallan() {
   const [vehicleNumber, setVehicleNumber] = useState("");
+  
+
+  const lastSearchedVehicles = [
+    "DL 7S CM 4147",
+    "WW WW WW WWW", 
+    "32 43 24 2342",
+    "HR 26 AB 1234",
+    "MH 01 XY 5678"
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +33,10 @@ export default function EChallan() {
     if (formatted.length > 8)
       formatted = formatted.slice(0, 8) + " " + formatted.slice(8, 12);
     setVehicleNumber(formatted);
+  };
+
+  const handleVehicleSuggestion = (suggestion) => {
+    setVehicleNumber(suggestion);
   };
 
   return (
@@ -96,9 +112,31 @@ export default function EChallan() {
                 </button>
               </Link>
             </form>
+
+            <div className="mt-6">
+              <p className="text-xs sm:text-sm text-[rgba(255,255,255,0.7)] mb-3">
+                Last searched vehicles:
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {lastSearchedVehicles.map((vehicle, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleVehicleSuggestion(vehicle)}
+                    className="px-3 py-1.5 text-xs sm:text-sm bg-white/10 hover:bg-white/20 text-[rgba(255,255,255,0.8)] hover:text-textwhite border border-[rgba(255,255,255,0.2)] rounded-lg transition-all duration-200 hover:scale-105"
+                  >
+                    {vehicle}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <HowItWorks />
+      <FeaturesSection />
+      <StatisticsSection />
+
       <SafetyTips />
       <Loader loading={false} />
       <FAQSection />
