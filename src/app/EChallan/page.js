@@ -90,7 +90,7 @@ export default function EChallan() {
                   Vehicle Number
                 </label>
                 <div className="flex items-center gap-2">
-                  <div className="bg-main text-[#004d4d] font-semibold px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base">
+                  <div className="bg-main text-backg font-semibold px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base">
                     IND
                   </div>
                   <input
@@ -98,7 +98,7 @@ export default function EChallan() {
                     placeholder="DL 12 CX 1234"
                     value={vehicleNumber}
                     onChange={(e) => handleVehicleInput(e.target.value)}
-                    className="flex-1 border border-transparent rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-lg sm:text-xl font-bold uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-main transition-all bg-white text-gray-900 placeholder:text-gray-400"
+                    className="flex-1 border border-transparent rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-lg sm:text-xl font-bold uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-main transition-all bg-bg-primary text-text-primary placeholder:text-text-muted"
                   />
                 </div>
               </div>
@@ -106,7 +106,7 @@ export default function EChallan() {
               <Link href="/Challans">
                 <button
                   type="submit"
-                  className="w-full bg-main hover:bg-[#9fffe0] text-[#004d4d] font-semibold py-2.5 sm:py-3 rounded-lg shadow-lg transition-all duration-200 text-sm sm:text-base"
+                  className="w-full bg-main hover:bg-hoverlight text-backg font-semibold py-2.5 sm:py-3 rounded-lg shadow-lg transition-all duration-200 text-sm sm:text-base"
                 >
                   🔍 Check Challan
                 </button>

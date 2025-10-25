@@ -58,7 +58,7 @@ export default function HomePage() {
         <Link href="/EChallan">
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="mt-6 sm:mt-8 px-6 sm:px-8 py-2.5 sm:py-3 bg-main text-[#004d4d] font-semibold rounded-full shadow-md hover:bg-[#9fffe0] transition text-sm sm:text-base"
+            className="mt-6 sm:mt-8 px-6 sm:px-8 py-2.5 sm:py-3 bg-main text-backg font-semibold rounded-full shadow-md hover:bg-hoverlight transition text-sm sm:text-base"
           >
             Get Started
           </motion.button>
@@ -102,7 +102,7 @@ export default function HomePage() {
         <div className="flex justify-center mt-8 sm:mt-10">
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="px-5 sm:px-6 py-2 sm:py-2.5 rounded-full border border-main text-main hover:bg-main hover:text-[#004d4d] transition font-medium text-sm sm:text-base"
+            className="px-5 sm:px-6 py-2 sm:py-2.5 rounded-full border border-main text-main hover:bg-main hover:text-backg transition font-medium text-sm sm:text-base"
           >
             View More →
           </motion.button>
@@ -180,7 +180,7 @@ export default function HomePage() {
             },
           ].map((s, i) => (
             <div key={i} className="bg-black/20 backdrop-blur-lg border border-[rgba(255,255,255,0.2)] rounded-2xl p-5 shadow-md">
-              <div className="w-9 h-9 rounded-full bg-main text-[#004d4d] flex items-center justify-center font-bold">
+              <div className="w-9 h-9 rounded-full bg-main text-backg flex items-center justify-center font-bold">
                 {s.step}
               </div>
               <h3 className="mt-3 font-semibold text-textwhite">{s.title}</h3>

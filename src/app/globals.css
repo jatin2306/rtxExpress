@@ -7,16 +7,37 @@
 
 @theme inline {
   --color-main: #7fffd4; /* aquamarine */
-
   --color-hoverColor: #7fffd4; /* aquamarine */
   --color-hoverlight: #9fffe0; /* lighter aquamarine for gradients */
-  --color-  : #7fffd4; /* aquamarine */
   --color-textSecond: #7fffd4; /* aquamarine */
   --color-backg: #008080; /* match page background */
   --color-textwhite: #ffffff;
   --color-turquoiseStart: #7fffd4;
   --color-turquoiseEnd: #7fffd4;
   --color-turquoiseGlow: rgba(127,255,212,0.6);
+  
+  /* Text colors */
+  --color-text-primary: #1f2937; /* gray-800 */
+  --color-text-secondary: #6b7280; /* gray-500 */
+  --color-text-muted: #9ca3af; /* gray-400 */
+  --color-text-light: #d1d5db; /* gray-300 */
+  --color-text-success: #059669; /* green-600 */
+  --color-text-error: #dc2626; /* red-600 */
+  --color-text-warning: #d97706; /* amber-600 */
+  
+  /* Background colors */
+  --color-bg-primary: #ffffff; /* white */
+  --color-bg-secondary: #f9fafb; /* gray-50 */
+  --color-bg-muted: #f3f4f6; /* gray-100 */
+  --color-bg-success: #10b981; /* emerald-500 */
+  --color-bg-error: #ef4444; /* red-500 */
+  --color-bg-warning: #f59e0b; /* amber-500 */
+  
+  /* Border colors */
+  --color-border-primary: #e5e7eb; /* gray-200 */
+  --color-border-secondary: #d1d5db; /* gray-300 */
+  --color-border-muted: #f3f4f6; /* gray-100 */
+  --color-border-error: #fca5a5; /* red-300 */
 }
 
 body {

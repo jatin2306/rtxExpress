@@ -9,9 +9,9 @@ const BackButton = ({ className = "" }) => {
   return (
     <Button
       onClick={() => router.back()}
-      className={`p-2 rounded-full bg-main hover:bg-[#9fffe0] transition ${className}`}
+      className={`p-2 rounded-full bg-main hover:bg-hoverlight transition ${className}`}
     >
-      <ArrowLeft className="w-5 h-5 text-[#004d4d]" />
+      <ArrowLeft className="w-5 h-5 text-backg" />
     </Button>
   );
 };

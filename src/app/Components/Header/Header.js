@@ -55,8 +55,8 @@ const Header = () => {
                     href={link}
                     className={`px-5 py-2 rounded-xl font-medium transition-all duration-200 ${
                       isActive
-                        ? "bg-main text-[#004d4d] font-semibold shadow-md"
-                        : "text-textwhite hover:bg-main hover:text-[#004d4d] font-semibold"
+                        ? "bg-main text-backg font-semibold shadow-md"
+                        : "text-textwhite hover:bg-main hover:text-backg font-semibold"
                     }`}
                   >
                     {label}
@@ -75,8 +75,8 @@ const Header = () => {
               />
             ) : (
               <Button
-                className="cursor-pointer bg-main text-[#004d4d] px-4 py-2 rounded-xl font-semibold
-                transition-all duration-200 ease-in-out hover:bg-[#9fffe0] border-none"
+                className="cursor-pointer bg-main text-backg px-4 py-2 rounded-xl font-semibold
+                transition-all duration-200 ease-in-out hover:bg-hoverlight border-none"
                 onClick={() => setIsLoginOpen(true)}
               >
                 Login

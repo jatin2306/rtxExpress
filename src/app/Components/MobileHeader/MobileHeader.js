@@ -17,8 +17,8 @@ const MobileHeader = ({ isLoggedIn, setIsLoginOpen, setIsMobileMenuOpen }) => {
             href={link}
             className={`font-medium px-4 py-2 rounded-xl transition-all duration-200 ${
               isActive
-                ? "bg-main text-[#004d4d] shadow-md"
-              : "text-textwhite hover:bg-main hover:text-[#004d4d]"
+                ? "bg-main text-backg shadow-md"
+              : "text-textwhite hover:bg-main hover:text-backg"
             }`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
@@ -29,7 +29,7 @@ const MobileHeader = ({ isLoggedIn, setIsLoginOpen, setIsMobileMenuOpen }) => {
       {!isLoggedIn && (
         <Button
           onClick={() => setIsLoginOpen(true)}
-          className="w-full bg-main text-[#004d4d] px-4 py-2 rounded-xl font-semibold transition-all duration-200 ease-in-out hover:bg-[#9fffe0] border-none"
+          className="w-full bg-main text-backg px-4 py-2 rounded-xl font-semibold transition-all duration-200 ease-in-out hover:bg-hoverlight border-none"
         >
           Login
         </Button>

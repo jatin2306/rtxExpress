@@ -6,8 +6,8 @@ import { logoName } from "../../Utilities/Utility";
 const ComingSoon = () => {
   return (
     <div className="relative flex flex-col items-center justify-center min-h-[90vh] overflow-hidden bg-backg text-center px-4 sm:px-6 md:px-8">
-      <div className="absolute top-[-10%] left-[-10%] w-48 h-48 sm:w-72 sm:h-72 bg-gradient-to-tr from-main to-[#9fffe0] rounded-full blur-3xl opacity-30 animate-float-slow"></div>
-      <div className="absolute bottom-[-15%] right-[-5%] w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-bl from-[#9fffe0] to-main rounded-full blur-3xl opacity-25 animate-float-slow-rev"></div>
+      <div className="absolute top-[-10%] left-[-10%] w-48 h-48 sm:w-72 sm:h-72 bg-gradient-to-tr from-main to-hoverlight rounded-full blur-3xl opacity-30 animate-float-slow"></div>
+      <div className="absolute bottom-[-15%] right-[-5%] w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-bl from-hoverlight to-main rounded-full blur-3xl opacity-25 animate-float-slow-rev"></div>
 
       <motion.h1
         className="text-4xl sm:text-[3rem] md:text-[5rem] font-extrabold text-textwhite drop-shadow-xl tracking-wide"
