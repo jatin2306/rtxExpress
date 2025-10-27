@@ -3,7 +3,8 @@ import "./globals.css";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import { logoName } from "./Utilities/Utility";
-import {Providers} from './Providers'
+import { Providers } from "./Providers";
+import { Toaster } from "react-hot-toast";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -33,10 +34,10 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-
-        <Header />
-        {children}
-        <Footer />
+          <Header />
+          {children}
+          <Footer />
+          <Toaster position="top-right" reverseOrder={false} />
         </Providers>
       </body>
     </html>
