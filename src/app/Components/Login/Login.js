@@ -202,7 +202,7 @@ export default function LoginModal({ isOpen, onClose }) {
               <div className="space-y-4 sm:space-y-6">
                 <div className="text-center">
                   <p className="text-[rgba(255,255,255,0.7)] text-sm mb-2">
-                    We've sent a 6-digit code to
+                    We&apos;ve sent a 6-digit code to
                   </p>
                   <p className="text-textwhite font-medium">{email}</p>
                 </div>
