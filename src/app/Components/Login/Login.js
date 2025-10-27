@@ -20,6 +20,7 @@ export default function LoginModal({ isOpen, onClose }) {
   const dispatch = useAppDispatch();
   const sendOtpState = SendOtpReducer()
   const otpInputRefs = useRef([]);
+  const lastShownToastRef = useRef(null);
   const validateEmail = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
@@ -83,6 +84,7 @@ export default function LoginModal({ isOpen, onClose }) {
   };
 
   const handleResendOtp = () => {
+    lastShownToastRef.current = null; // Reset ref to allow toast to show again
     dispatch(onPostSendOtp({ email: email }));
     setOtp("");
     setOtpError("");
@@ -91,15 +93,19 @@ export default function LoginModal({ isOpen, onClose }) {
 
   useEffect(() => {
     if (sendOtpState.post_status_code === "200") {
-      setShowOtpInput(true);
-      setError("");
-      toast.success(sendOtpState?.postMessage)
-      dispatch(onPostSendOtpReset())
-      setResendTimer(60); // Start 1 minute timer
+
+      if (lastShownToastRef.current !== sendOtpState.postMessage) {
+        setShowOtpInput(true);
+        setError("");
+        toast.success(sendOtpState?.postMessage);
+        lastShownToastRef.current = sendOtpState.postMessage;
+        dispatch(onPostSendOtpReset());
+        setResendTimer(60);
+      }
     } else if (sendOtpState.post_status_code === 400) {
       setError(sendOtpState.postMessage);
     }
-  }, [sendOtpState]);
+  }, [sendOtpState, dispatch]);
 
 
   useEffect(() => {
@@ -120,6 +126,7 @@ export default function LoginModal({ isOpen, onClose }) {
         setShowOtpInput(false);
         setOtp("");
         setResendTimer(0);
+        lastShownToastRef.current = null;
       }
     };
 
@@ -127,6 +134,8 @@ export default function LoginModal({ isOpen, onClose }) {
       document.addEventListener("keydown", handleEsc);
     } else {
       document.removeEventListener("keydown", handleEsc);
+
+      lastShownToastRef.current = null;
     }
 
     return () => document.removeEventListener("keydown", handleEsc);
