@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 
 const logoName = "RTO Xpress";
-const login =false
+const login = false
 const useAppDispatch = () => useDispatch();
 const SendOtpReducer = () => useSelector((state) => state?.sendOtpReducer);
 const navItems = [
@@ -9,4 +9,13 @@ const navItems = [
   { label: "Insurance", link: "/Insurance" },
   { label: "EChallan", link: "/EChallan" },
 ];
-export { logoName, navItems, login, useAppDispatch, SendOtpReducer };
+const scrollToTop = () => {
+  if (typeof window !== 'undefined') {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+};
+
+export { logoName, navItems, login, useAppDispatch, SendOtpReducer, scrollToTop };

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { logoName } from "../../Utilities/Utility";
+import { logoName, scrollToTop } from "../../Utilities/Utility";
 
 export default function Footer() {
   return (
@@ -22,29 +22,26 @@ export default function Footer() {
           </h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/" className="hover:text-main transition text-[rgba(255,255,255,0.7)]">
+              <Link href="/" className="hover:text-main transition text-[rgba(255,255,255,0.7)]" onClick={scrollToTop}>
                 Home
               </Link>
             </li>
             <li>
               <Link
-                href="/insurance"
+                href="/Insurance"
                 className="hover:text-main transition text-[rgba(255,255,255,0.7)]"
+                onClick={scrollToTop}
               >
                 Insurance
               </Link>
             </li>
             <li>
               <Link
-                href="/echallan"
+                href="/EChallan"
                 className="hover:text-main transition text-[rgba(255,255,255,0.7)]"
+                onClick={scrollToTop}
               >
                 E-Challan
-              </Link>
-            </li>
-            <li>
-              <Link href="/login" className="hover:text-main transition text-[rgba(255,255,255,0.7)]">
-                Login
               </Link>
             </li>
           </ul>
@@ -54,17 +51,17 @@ export default function Footer() {
           <h3 className="text-lg font-semibold text-textwhite mb-3">Support</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/help" className="hover:text-main transition text-[rgba(255,255,255,0.7)]">
+              <Link href="/Help" className="hover:text-main transition text-[rgba(255,255,255,0.7)]" onClick={scrollToTop}>
                 Help Center
               </Link>
             </li>
             <li>
-              <Link href="/terms" className="hover:text-main transition text-[rgba(255,255,255,0.7)]">
+              <Link href="/Terms" className="hover:text-main transition text-[rgba(255,255,255,0.7)]" onClick={scrollToTop}>
                 Terms & Conditions
               </Link>
             </li>
             <li>
-              <Link href="/privacy" className="hover:text-main transition text-[rgba(255,255,255,0.7)]">
+              <Link href="/Privacy" className="hover:text-main transition text-[rgba(255,255,255,0.7)]" onClick={scrollToTop}>
                 Privacy Policy
               </Link>
             </li>
@@ -78,10 +75,10 @@ export default function Footer() {
           <p className="text-sm text-[rgba(255,255,255,0.7)]">
             Email:{" "}
             <Link
-              href="mailto:support@{logoName}.com"
+              href={`mailto:support@${logoName.toLowerCase().replace(/\s+/g, '')}.com`}
               className="text-main hover:underline"
             >
-              support@{logoName}.com
+              support@{logoName.toLowerCase().replace(/\s+/g, '')}.com
             </Link>
           </p>
           <p className="text-sm text-[rgba(255,255,255,0.7)] mt-2">

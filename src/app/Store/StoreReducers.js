@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import sendOtpReducer from "./Slices/sendOtpSlice";
-import utilityReducer from "./Slices/UtilitySlice";
+import utilityReducer from "./Slices/utilitySlice";
 
 const reducers = combineReducers({
   sendOtpReducer: sendOtpReducer,
